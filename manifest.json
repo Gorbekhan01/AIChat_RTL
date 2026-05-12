@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "AiChat-RTL",
+  "version": "1.0",
+  "description": "RTL supporter for AI Chatbots",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://chat.deepseek.com/*"],
+      "js": ["main.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
+
