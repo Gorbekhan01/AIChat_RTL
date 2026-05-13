@@ -1,5 +1,4 @@
 function deepSeekStart() {
-
   let currentMode = localStorage.getItem("mode") || "auto";
   let currentTheme = localStorage.getItem("theme") || "default";
   let debounceTimer = null;
@@ -15,12 +14,26 @@ function deepSeekStart() {
       ".ds-markdown-paragraph, h1, h2, h3, h4, h5, ol, ul, li, p, ._27c9245, table",
   };
 
+  function isRTLLang(text) {
+    const rtlPattern =
+      /[\u0600-\u06FF\uFB8A\u067E\u0686\u06AF]|[\u0700-\u074F]|[\u0750-\u077F]|[\u08A0-\u08FF]|[\u1800-\u18AF]/g;
+    const rtlChars = text.match(rtlPattern);
+    if (!rtlChars) return false;
+    return true;
+  }
+
   function setDirection(elements, dir) {
     const isAuto = dir === "auto";
     elements.forEach((element) => {
       if (isAuto) {
-        element.removeAttribute("dir");
-        element.style.direction = "";
+        const firstChars = element.textContent.slice(0, 15);
+        if (isRTLLang(firstChars)) {
+          element.setAttribute("dir", "rtl");
+          element.style.direction = "rtl";
+        } else {
+          element.setAttribute("dir", "ltr");
+          element.style.direction = "ltr";
+        }
       } else {
         element.setAttribute("dir", dir);
         element.style.direction = dir;
@@ -39,8 +52,9 @@ function deepSeekStart() {
       case "ltr":
         setDirection(elements, "ltr");
         break;
-      default:
+      case "auto":
         setDirection(elements, "auto");
+        break;
     }
 
     localStorage.setItem("mode", currentMode);
@@ -57,8 +71,8 @@ function deepSeekStart() {
     if (!dirButton) return;
 
     const buttonText = dirButton.querySelector(SELECTORS.buttonTextTarget);
-    const statusMap = { rtl: "1", ltr: "2", auto: "0" };
-    const textMap = { rtl: "RTL", ltr: "LTR", auto: "Auto" };
+    const statusMap = { auto: "0", rtl: "1", ltr: "2" };
+    const textMap = { auto: "Auto", rtl: "RTL", ltr: "LTR" };
 
     dirButton.setAttribute("status", statusMap[currentMode]);
     if (buttonText) buttonText.textContent = textMap[currentMode];
@@ -338,4 +352,3 @@ function deepSeekStart() {
     Starter();
   }
 }
-
