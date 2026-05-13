@@ -3,13 +3,32 @@
   "name": "AiChat-RTL",
   "version": "1.0",
   "description": "RTL supporter for AI Chatbots",
-  "permissions": ["activeTab"],
+  "permissions": [
+    "activeTab"
+  ],
   "content_scripts": [
     {
-      "matches": ["https://chat.deepseek.com/*"],
-      "js": [ "themes.js" , "deepseek.js" , "main.js"],
+      "matches": [
+        "https://chat.deepseek.com/*"
+      ],
+      "js": [
+        "themes.js",
+        "deepseek.js",
+        "main.js"
+      ],
       "run_at": "document_end"
     }
-  ]
+  ],
+"action": {
+    "default_popup": "popup.html",
+    "default_title": "AiChat-RTL",
+    "default_icon": {
+      "16": "icons/icon_16.svg",
+      "32": "icons/icon_32p.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon_16.svg",
+    "32": "icons/icon_32p.png"
+  }
 }
-
