@@ -11,22 +11,22 @@ function deepSeekStart() {
     buttonTextTarget: "._6dbc175",
     iconToRemove: ".ds-icon.ds-atom-button__icon",
     targetElements:
-      ".ds-markdown-paragraph, h1, h2, h3, h4, h5, ol, ul, li, p, ._27c9245, table",
+      ".fbb737a4 , .ds-markdown-paragraph, h1, h2, h3, h4, h5, ol, ul, li, p, ._27c9245, table",
   };
 
-  function isRTLLang(text) {
+function isRTLLang(text) {
     const rtlPattern =
       /[\u0600-\u06FF\uFB8A\u067E\u0686\u06AF]|[\u0700-\u074F]|[\u0750-\u077F]|[\u08A0-\u08FF]|[\u1800-\u18AF]/g;
     const rtlChars = text.match(rtlPattern);
-    if (!rtlChars) return false;
-    return true;
-  }
+    if (rtlChars && rtlChars.length > 0) return true;
+    return false;
+}
 
   function setDirection(elements, dir) {
     const isAuto = dir === "auto";
     elements.forEach((element) => {
       if (isAuto) {
-        const firstChars = element.textContent.slice(0, 15);
+        const firstChars = element.textContent;
         if (isRTLLang(firstChars)) {
           element.setAttribute("dir", "rtl");
           element.style.direction = "rtl";
