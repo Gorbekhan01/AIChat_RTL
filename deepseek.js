@@ -327,7 +327,7 @@ function isRTLLang(text) {
   // katex rtl fixation
   const style = document.createElement("style");
   style.textContent = `
-    .katex, .katex-display, .katex-html, .katex-mathml {
+    .katex, .katex-display, .katex-html, .katex-mathml, .md-code-block , code{
         direction: ltr !important;
         unicode-bidi: embed !important;
         text-align: left !important;
