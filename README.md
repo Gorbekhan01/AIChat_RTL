@@ -1,4 +1,4 @@
-# 🤖 AI Chatbots RTL Support + Theme
+# 🤖 AI Chatbots RTL Support Extention + Theme
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-blue)](https://github.com/Gorbekhan01)
 [![Version](https://img.shields.io/badge/version-1.0-green)](https://github.com/Gorbekhan01)
 [![License](https://img.shields.io/badge/license-MIT-orange)](https://github.com/Gorbekhan01)
@@ -18,29 +18,35 @@
 | Fixes chat text direction | Switch between 6+ themes |
 ---
 ## 🚀 Supported AI Websites
-| Platform | Status            |     |
-| -------- | ----------------- | --- |
-| DeepSeek | ✅ Fully Supported |     |
-| Gemini   | 🚧 Coming Soon    |     |
-| Claude   | 🚧 Coming Soon    |     |
+| Platform | Status            | 
+| -------- | ----------------- | 
+| DeepSeek | ✅ Fully Supported | 
+| Gemini   | 🚧 Coming Soon    | 
+| Claude   | 🚧 Coming Soon    | 
 
 ---
 ## 📦 Installation
+
 ### For Chromium-based browsers (Chrome, Edge, Brave, Opera):
+
+1. **Download the repository**
+   - Click "Code" button → "Download ZIP" or clone with Git
+
+2. **Extract the folder** (if downloaded as ZIP)
+
+3. **Load in browser:**
+   - Open browser → `chrome://extensions` (or `edge://extensions`)
+   - Enable **"Developer Mode"** (toggle in top-right)
+   - Click **"Load Unpacked"**
+   - Select the extension folder
+   - Done! 🎉
+
+### Or manually with Git:
+
 ```bash
-1. Open browser → Settings / Extensions
-2. Enable "Developer Mode" (toggle on)
-3. Click "Load Unpacked"
-4. Select the extension folder
-5. Done! 🎉
-
-### Or manually:
-
-bash
-
-git clone https://github.com/Gorbekhan01/ai-chat-rtl-support.git
-cd ai-chat-rtl-support
-# Then load in browser as unpacked extension
+git clone https://github.com/Gorbekhan01/AIChat_RTL.git
+cd AIChat_RTL
+# Then follow step 3 above to load in browser
 ```
 ---
 
