@@ -21,7 +21,6 @@
 | Platform | Status            | 
 | -------- | ----------------- | 
 | DeepSeek | ✅ Fully Supported | 
-| Gemini   | 🚧 Coming Soon    | 
 | Claude   | 🚧 Coming Soon    | 
 
 ---
