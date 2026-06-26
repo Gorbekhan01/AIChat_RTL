@@ -6,8 +6,8 @@ function deepSeekStart() {
   const MAX_RETRIES = 15;
 
   const SELECTORS = {
-    buttonsContainer: ".ec4f5d61",
-    originalButton: ".ds-atom-button",
+    buttonsContainer: "._58b31c9",
+    originalButton: ".f79352dc",
     buttonTextTarget: "._6dbc175",
     iconToRemove: ".ds-icon.ds-atom-button__icon",
     targetElements:
